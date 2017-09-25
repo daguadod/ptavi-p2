@@ -16,8 +16,8 @@ class CalculadoraHija(calcoo.Calculadora):
 if __name__ == "__main__":
     try:
         objetohijo = CalculadoraHija(int(sys.argv[1]), int(sys.argv[3]))
-    except ValueError: 
-        sys.exit("Error: Usar solo enteros.")
+    except ValueError:
+        sys.exit("Error: Non numerical parameters")
 
     if sys.argv[2] == 'suma':
        result = objetohijo.suma()
@@ -25,10 +25,12 @@ if __name__ == "__main__":
        result = objetohijo.resta()
     elif sys.argv[2] == 'multiplicacion':
         result = objetohijo.multi()
-    else: 
+    elif sys.argv[2] == 'division':
         try:
             result = objetohijo.divi()
         except ZeroDivisionError:
-            sys.exit("Dividiendo por 0") 
+            sys.exit("Division by zero is not allowed") 
+    else:
+        sys.exit('Error: Sólo puedes operar suma, resta, multiplicacion y division.')
 
 print(result)
