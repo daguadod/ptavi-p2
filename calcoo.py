@@ -21,7 +21,7 @@ if __name__ == "__main__":
     try:
         objeto = Calculadora(int(sys.argv[1]), int(sys.argv[3]))
     except ValueError: 
-        sys.exit("Error: Usar solo enteros.")
+        sys.exit("Error: Non numerical parameters")
 
     if sys.argv[2] == 'suma':
        result = objeto.suma()
