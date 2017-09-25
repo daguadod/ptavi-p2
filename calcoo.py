@@ -16,12 +16,16 @@ class Calculadora:
     def resta(self):
         return self.valor1 - self.valor2
 
-#Llamamos a la calculadora segun se introduzca en la maquina de comandos
+#Llamamos a la calculadora según se introduzca en la maquina de comandos
 if __name__ == "__main__":
-    objeto = Calculadora(int(sys.argv[1]), int(sys.argv[3]))
+    try:
+        objeto = Calculadora(int(sys.argv[1]), int(sys.argv[3]))
+    except ValueError: 
+        sys.exit("Error: Usar solo enteros.")
+
     if sys.argv[2] == 'suma':
        result = objeto.suma()
     elif sys.argv[2] == 'resta':
        result = objeto.resta()
     else:
-        sys.exit('Operar solo enteros.')
+        sys.exit('Error: Usar solo suma y resta.')
