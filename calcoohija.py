@@ -3,13 +3,13 @@
 import calcoo
 import sys
 
-#Declaramos que la clase viene de una clase madre "Calculadora"
+
+# Declaramos que la clase viene de una clase madre "Calculadora"
 class CalculadoraHija(calcoo.Calculadora):
 
-#Operaciones de multiplicación y división 
     def multi(self):
         return self.valor1 * self.valor2
-    
+
     def divi(self):
         return self.valor1 / self.valor2
 
@@ -20,17 +20,18 @@ if __name__ == "__main__":
         sys.exit("Error: Non numerical parameters")
 
     if sys.argv[2] == 'suma':
-       result = objetohijo.suma()
+        result = objetohijo.suma()
     elif sys.argv[2] == 'resta':
-       result = objetohijo.resta()
+        result = objetohijo.resta()
     elif sys.argv[2] == 'multiplica':
-       result = objetohijo.multi()
+        result = objetohijo.multi()
     elif sys.argv[2] == 'divide':
         try:
             result = objetohijo.divi()
+
         except ZeroDivisionError:
-            sys.exit("Division by zero is not allowed") 
+            sys.exit("Division by zero is not allowed")
     else:
-        sys.exit('Error: Sólo puedes operar suma, resta, multiplicacion y division.')
+        sys.exit('Error: Sólo puedes operar suma, resta, multipli y division.')
 
 print(result)
