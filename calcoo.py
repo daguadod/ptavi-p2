@@ -19,13 +19,11 @@ class Calculadora:
 #Llamamos a la calculadora según se introduzca en la maquina de comandos
 if __name__ == "__main__":
     try:
-        objeto = Calculadora(int(sys.argv[1]), int(sys.argv[3]))
-    except ValueError: 
+        objeto = Calculadora(float(sys.argv[1]), float(sys.argv[3]))
+    except ValueError:
         sys.exit("Error: Non numerical parameters")
 
     if sys.argv[2] == 'suma':
        result = objeto.suma()
     elif sys.argv[2] == 'resta':
        result = objeto.resta()
-    else:
-        sys.exit('Error: Usar solo suma y resta.')
