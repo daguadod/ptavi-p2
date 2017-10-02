@@ -1,16 +1,16 @@
-#/usr/bin/python3
+#!/usr/bin/python3
 
 import sys
 import csv
 
-#Abrimos el fichero .csv y declaramos operador y operando1
-with open(sys.argv[1], newline = '') as f:
-    reader = csv.reader(f,delimiter = ',')
+# Abrimos el fichero .csv y declaramos operador y operando1
+with open(sys.argv[1], newline='') as f:
+    reader = csv.reader(f, delimiter=',')
     for operacion in reader:
         operador = operacion[0]
         operando1 = float(operacion[1])
 
-#Declaramos las operaciones con sus respectivas excepciones
+# Declaramos las operaciones con sus respectivas excepciones
         if operador == 'suma':
             for operando in operacion[2:]:
                 operando1 += float(operando)
@@ -27,7 +27,6 @@ with open(sys.argv[1], newline = '') as f:
             except ZeroDivisionError:
                 sys.exit("Division by zero is not allowed")
         else:
-            sys.exit('Error: Sólo puedes operar suma, resta, multiplicacion y division.')
+            sys.exit('Error: Sólo puedes operar suma, resta, multipli y divi.')
 
-        print(operador,operando1)
-      
+print(operador, operando1)
