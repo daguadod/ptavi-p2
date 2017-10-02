@@ -27,5 +27,5 @@ with open(sys.argv[1], newline = '') as f:
         else:
             sys.exit('Error: Sólo puedes operar suma, resta, multiplicacion y division.')
 
-        print(operando1)
+        print(operador,operando1)
       
